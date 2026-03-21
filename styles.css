@@ -122,8 +122,28 @@ main {
 .hero {
   width: min(400px, 90vw);
   height: auto;
-  /* border-radius: 300px; */
+  border-radius: 300px;
   margin: 0;
+}
+
+@media (min-width: 1025px) {
+  .bio {
+    display: flex;
+    gap: 140px;
+  }
+
+  .hero {
+    width: 300px;
+  }
+
+  .description {
+    width: 500px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -169,6 +189,10 @@ main {
   .bio {
     flex-flow: column nowrap;
     gap: 18px;
+  }
+
+  .hero {
+    width: 300px;
   }
 
   .description {
