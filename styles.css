@@ -231,6 +231,10 @@ main {
   }
 }
 
+.hero {
+  width: 200px;
+}
+
 footer {
   display: flex;
   flex-flow: row nowrap;
