@@ -88,78 +88,104 @@ a:active {
   transform: translateY(5px);
 }
 
-main {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+h1 {
+  width: 600px;
+  margin: 10px auto;
+  padding: 10px;
 }
 
-.title {
-  font-family: "Cutive Mono", sans-serif;
-  font-weight: bolder;
-  font-size: 3rem;
-  text-align: center;
-  color: #11ffef;
+.content-container {
+  width: 90vw;
+  height: 60vh;
+  margin: 10px auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 50px;
+  background-color: rgba(0, 0, 0, 0.315);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.left-side,
+.right-side {
+  width: 50%;
+}
+
+.main-list,
+.main-list2 {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.sub-list1,
+.sub-list2,
+.sub-list3,
+.sub-list4 {
+  width: 100%;
+  height: 100px;
+  padding: 20px;
   margin-bottom: 20px;
 }
 
-.accolades {
-  border: 2px solid black;
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: red;
+}
+
+.list-title,
+.list-btn {
+  width: 100%;
+}
+
+.list-btn {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
-  gap: 40px;
-  max-width: 90%;
-  background-color: rgba(33, 29, 29, 0.58);
-  color: rgb(182, 243, 246);
-  padding: 10px;
-}
-
-.section1,
-.section2 {
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 10px;
-}
-
-.section1 {
-  gap: 30px;
-}
-
-.section2 {
-  gap: 20px;
-}
-
-.education,
-.agf,
-.teaching,
-.pfw {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  border-top: 2px solid wheat;
-  border-bottom: 2px solid wheat;
-}
-
-.accolades h1 {
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+  background-color: rgba(0, 0, 0, 0.002);
+  border: none;
+  font-family: "Kaushan Script", sans-serif;
   font-size: 1.4rem;
+  color: rgb(233, 226, 150);
 }
 
-.education_items,
-.agf_items,
-.teaching_items,
-.pfw_items {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 5px;
-  margin-left: 20px;
+.edu-title {
+  padding-right: 24px;
 }
 
-.teaching_items {
-  list-style: none;
+.icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: black;
 }
 
-.teaching_items_subitems {
-  margin-left: 40px;
+.icon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+
+.icon-horizontal,
+.icon-vertical {
+  position: absolute;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon-horizontal {
+  width: 100%;
+  height: 2px;
+}
+
+.icon-vertical {
+  width: 2px;
+  height: 100%;
 }
