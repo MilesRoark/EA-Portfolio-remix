@@ -10,7 +10,7 @@
 
 body {
   background:
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("./Assets/experiencesbackground.webp") center / cover no-repeat fixed;
   color: #ffcd42d5;
   font-family: "Inter", sans-serif;
@@ -18,16 +18,16 @@ body {
   font-weight: 800;
   line-height: 1.4;
   width: 100%;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 2px 4px 2px black;
 }
 
 header {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  gap: 200px;
-  padding: 30px;
+  gap: 24px;
+  padding: 30px clamp(16px, 4vw, 40px);
   font-family: "Kaushan Script", sans-serif;
 }
 
@@ -52,27 +52,39 @@ footer {
 }
 
 .subject {
-  margin-left: -100px;
-  font-size: 2rem;
+  margin-left: 0;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+nav {
+  flex: 1 1 520px;
 }
 
 #navlinks {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  gap: 20px;
-  margin-right: -90px;
+  gap: 12px 20px;
+  margin-right: 0;
 }
 
 #navlinks li {
   list-style: none;
 }
 
+#navlinks a[aria-current="page"] {
+  color: #ffcd42;
+  border-bottom: 2px solid #ffcd42;
+  padding-bottom: 2px;
+}
+
 a {
   text-decoration: none;
   display: inline-block;
   transition: transform 0.2s ease;
+  font-weight: 800;
+  font-size: clamp(1.2rem, 2.4vw, 2rem);
 }
 
 a {
@@ -89,19 +101,23 @@ a:active {
 }
 
 h1 {
-  width: 600px;
-  margin: 10px auto;
+  width: min(1000px, 92vw);
+  margin: 40px auto;
   padding: 10px;
+  font-family: "My Soul", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  text-align: center;
 }
 
 .content-container {
-  width: 90vw;
-  height: 80vh;
+  width: min(90vw, 1200px);
+  min-height: 30vh;
+  height: auto;
   margin: 10px auto;
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
-  gap: 50px;
+  align-items: flex-start;
+  gap: clamp(20px, 4vw, 50px);
   background-color: rgba(0, 0, 0, 0.315);
   padding: 10px;
   border-radius: 15px;
@@ -109,7 +125,9 @@ h1 {
 
 .left-side,
 .right-side {
-  width: 50%;
+  flex: 1 1 0;
+  width: auto;
+  min-width: 0;
 }
 
 .main-list,
@@ -123,10 +141,9 @@ h1 {
 .sub-list3,
 .sub-list4 {
   width: 100%;
-  height: 100%;
-  /* padding: 20px;
-  margin-bottom: 20px; */
-  border: 2px solid pink;
+  height: auto;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .divider {
@@ -138,6 +155,7 @@ h1 {
 .list-title,
 .list-btn {
   width: 100%;
+  cursor: pointer;
 }
 
 .list-btn {
@@ -153,8 +171,12 @@ h1 {
   color: rgb(233, 226, 150);
 }
 
-.edu-title {
+.edu-title,
+.teaching-title,
+.agf-title,
+.pfw-title {
   padding-right: 24px;
+  text-shadow: 2px 4px 2px black;
 }
 
 .icon-wrapper {
@@ -205,4 +227,119 @@ h1 {
   margin-left: 60px;
   font-size: 0.9rem;
   color: blanchedalmond;
+}
+
+.experiences-edu,
+.experiences-teaching,
+.experiences-agf,
+.experiences-pfw {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}
+
+.is-open {
+  max-height: 1000px;
+}
+
+.list-btn.is-active .icon-vertical {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav {
+    flex-basis: 100%;
+  }
+
+  #navlinks {
+    justify-content: center;
+  }
+
+  .content-container {
+    flex-flow: column nowrap;
+    width: 94vw;
+  }
+
+  .left-side,
+  .right-side {
+    width: 100%;
+  }
+
+  h1 {
+    margin: 24px auto;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  header {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .subject {
+    text-align: center;
+  }
+
+  #navlinks {
+    gap: 10px 14px;
+  }
+
+  a {
+    font-size: 1.3rem;
+  }
+
+  h1 {
+    width: 94vw;
+    font-size: 2.1rem;
+    margin: 20px auto 16px;
+  }
+
+  .content-container {
+    width: 96vw;
+    gap: 20px;
+    padding: 8px;
+  }
+
+  .list-btn {
+    font-size: 1.05rem;
+    padding: 18px 0;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .sub-list1,
+  .sub-list2,
+  .sub-list3,
+  .sub-list4 {
+    padding: 10px;
+  }
+
+  .experiences-teaching-title,
+  .experiences-pfw-title {
+    margin-left: 12px;
+  }
+
+  .edu-items,
+  .teaching-items,
+  .agf-items,
+  .pfw-items {
+    margin-left: 24px;
+  }
+
+  footer {
+    flex-flow: column nowrap;
+    gap: 10px;
+    margin-top: 30px;
+    text-align: center;
+    padding: 0 16px;
+  }
 }
