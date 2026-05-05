@@ -112,7 +112,7 @@ main {
   font-weight: bolder;
   font-size: 2rem;
   text-align: center;
-  color: #11ffef;
+  color: #779cd9;
   margin-bottom: 20px;
 }
 
@@ -125,7 +125,7 @@ main {
   background-color: rgba(33, 29, 29, 0.58);
   padding: 30px;
   width: min(60vw, 900px);
-  color: rgb(182, 243, 246);
+  color: rgb(130, 110, 230);
   border-radius: 12px;
 }
 
