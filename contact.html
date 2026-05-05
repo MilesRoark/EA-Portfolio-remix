@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="contact.css" />
     <script src="pagedetector.js" defer></script>
-    <title>Document</title>
+    <title>Contact</title>
   </head>
   <body>
     <header>
@@ -47,30 +47,38 @@
           src="Assets/contact-background2.png"
           alt="a picture describing the objective with a cultural statue next to it."
         />
-        <form action="https://formspree.io/f/xzdogrjo" method="POST">
+        <form action="https://formspree.io/f/mvzlrane" method="POST">
           <label for="firstName"
             >First Name(required)<input
               type="text"
               id="firstName"
               name="first-name"
+              autocomplete="given-name"
               required
           /></label>
 
-          <label for="LastName"
+          <label for="lastName"
             >Last Name(required)<input
               type="text"
               id="lastName"
               name="last-name"
+              autocomplete="family-name"
               required
           /></label>
 
           <label for="email"
             >Email (required)
-            <input type="email" id="email" name="email" required
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
           /></label>
 
-          <label for="newsletter"
-            ><input type="checkbox" />Sign up for news and updates</label
+          <label for="newsletter" class="checkbox-row"
+            ><input type="checkbox" id="newsletter" name="newsletter" />Sign up
+            for news and updates</label
           >
           <label for="message"
             >Message (required)<textarea
