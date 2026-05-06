@@ -506,10 +506,12 @@ const initGalleryCarousel = () => {
     texture.needsUpdate = true;
     const material = new THREE.MeshStandardMaterial({
       map: texture,
-      roughness: 0.62,
+      roughness: 0.5,
       metalness: 0.02,
       transparent: true,
-      opacity: 0.82,
+      opacity: 0.9,
+      emissive: 0x2a2a2a,
+      emissiveIntensity: 0.18,
       side: THREE.DoubleSide,
     });
     const mesh = new THREE.Mesh(new THREE.PlaneGeometry(2.95, 2.05), material);
@@ -616,7 +618,8 @@ const renderGalleryCarousel = (elapsed) => {
 
     const scale = Math.max(0.64, 1.5 - distance * 0.16);
     mesh.scale.setScalar(scale);
-    mesh.material.opacity = Math.max(0.35, 1 - distance * 0.13);
+    mesh.material.opacity = Math.max(0.58, 1 - distance * 0.1);
+    mesh.material.emissiveIntensity = Math.max(0.14, 0.32 - distance * 0.03);
     mesh.visible = distance < 8;
   });
 
